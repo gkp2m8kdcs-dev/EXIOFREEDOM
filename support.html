@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支持中心 — EXIOFREEDOM</title>
+    <meta name="description" content="EXIOFREEDOM 支持中心。快速开始指南、常见问题 FAQ、数据恢复、功能详解与人工联系方式。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A25;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F0D060;
+            --accent-green: #34D399;
+            --accent-blue: #60A5FA;
+            --accent-purple: #A78BFA;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(212, 175, 55, 0.3);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 20px 0;
+            background: rgba(10, 10, 15, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
+        .logo-mark {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 800; color: var(--bg-primary);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+        .logo-text {
+            background: linear-gradient(135deg, #F8FAFC 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
+            padding: 8px 16px; border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .nav-back:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
+        .page-header {
+            padding: 160px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: ''; position: absolute; top: -30%; right: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header .container { position: relative; }
+        .breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; color: var(--text-muted); margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--text-primary); }
+        .breadcrumb .sep { color: var(--accent-gold); }
+        .page-title {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .page-title .accent {
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-subtitle {
+            font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.7;
+            margin-bottom: 36px;
+        }
+        .search-box {
+            position: relative; max-width: 560px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 18px 24px 18px 56px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-box input::placeholder { color: var(--text-muted); }
+        .search-box input:focus {
+            border-color: var(--border-accent);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+        }
+        .search-icon {
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .quick-nav {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 16px; margin: 48px 0 80px;
+        }
+        .quick-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+        }
+        .quick-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-accent);
+        }
+        .quick-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; margin-bottom: 16px;
+        }
+        .quick-icon.blue { background: rgba(96, 165, 250, 0.12); }
+        .quick-icon.green { background: rgba(52, 211, 153, 0.12); }
+        .quick-icon.gold { background: rgba(212, 175, 55, 0.12); }
+        .quick-icon.purple { background: rgba(167, 139, 250, 0.12); }
+        .quick-card h4 {
+            font-size: 15px; font-weight: 700; margin-bottom: 6px;
+        }
+        .quick-card p {
+            font-size: 13px; color: var(--text-muted); line-height: 1.5;
+        }
+        .section {
+            margin-bottom: 80px;
+        }
+        .section-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        .section-head h2 {
+            font-size: 26px; font-weight: 800; letter-spacing: -0.02em;
+        }
+        .section-head h2 .tag {
+            display: inline-block; margin-left: 12px;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+            color: var(--accent-gold);
+            padding: 4px 10px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--border-accent);
+            border-radius: 100px;
+            vertical-align: middle;
+        }
+        .step-list {
+            display: flex; flex-direction: column; gap: 0;
+        }
+        .step-item {
+            display: grid; grid-template-columns: 56px 1fr;
+            gap: 20px; padding: 24px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-bottom: none;
+        }
+        .step-item:first-child { border-radius: 18px 18px 0 0; }
+        .step-item:last-child { border-radius: 0 0 18px 18px; border-bottom: 1px solid var(--border-subtle); }
+        .step-item:only-child { border-radius: 18px; border-bottom: 1px solid var(--border-subtle); }
+        .step-num {
+            width: 40px; height: 40px; border-radius: 12px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            border: 1px solid var(--border-accent);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 800; color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            font-size: 17px; font-weight: 700; margin-bottom: 8px;
+        }
+        .step-content p {
+            font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+        }
+        .step-content .tip {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 10px; padding: 6px 12px;
+            background: rgba(52, 211, 153, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.18);
+            border-radius: 8px;
+            font-size: 12px; color: var(--accent-green); font-weight: 500;
+        }
+        .faq {
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .faq-item:hover { border-color: rgba(255, 255, 255, 0.12); }
+        .faq-q {
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+            padding: 22px 24px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .faq-q h4 {
+            font-size: 15px; font-weight: 600; line-height: 1.5;
+            padding-right: 8px;
+        }
+        .faq-toggle {
+            flex-shrink: 0;
+            width: 24px; height: 24px; border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.25s ease;
+            font-size: 14px; font-weight: 700;
+        }
+        .faq-item.open { border-color: var(--border-accent); }
+        .faq-item.open .faq-toggle {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--border-accent);
+            color: var(--accent-gold);
+            transform: rotate(45deg);
+        }
+        .faq-a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.open .faq-a { max-height: 600px; }
+        .faq-a-inner {
+            padding: 0 24px 22px 24px;
+            color: var(--text-secondary);
+            font-size: 14px; line-height: 1.8;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 18px;
+        }
+        .faq-a-inner ul {
+            list-style: none; margin-top: 10px;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .faq-a-inner li {
+            padding-left: 18px; position: relative;
+        }
+        .faq-a-inner li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent-gold); opacity: 0.7;
+        }
+        .faq-a-inner code {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 8px; border-radius: 6px;
+            font-size: 13px; color: var(--accent-green);
+            font-family: 'SF Mono', Monaco, Menlo, monospace;
+        }
+        .contact-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .contact-card {
+            padding: 28px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            text-align: left;
+            transition: all 0.25s ease;
+        }
+        .contact-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+        }
+        .contact-icon {
+            width: 48px; height: 48px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; margin-bottom: 20px;
+        }
+        .contact-icon.gold { background: rgba(212, 175, 55, 0.12); }
+        .contact-icon.blue { background: rgba(96, 165, 250, 0.12); }
+        .contact-icon.green { background: rgba(52, 211, 153, 0.12); }
+        .contact-card h3 {
+            font-size: 16px; font-weight: 700; margin-bottom: 6px;
+        }
+        .contact-card .desc {
+            font-size: 13px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6;
+        }
+        .contact-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--accent-gold); text-decoration: none; font-size: 14px; font-weight: 600;
+            transition: gap 0.2s;
+        }
+        .contact-link:hover { gap: 12px; }
+        footer {
+            padding: 80px 0 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 64px;
+        }
+        .footer-brand p {
+            color: var(--text-muted); font-size: 14px; line-height: 1.7;
+            margin-top: 16px; max-width: 320px;
+        }
+        .footer-col h4 {
+            font-size: 13px; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 20px; letter-spacing: 0.02em;
+        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-bottom {
+            padding-top: 32px; border-top: 1px solid var(--border-subtle);
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+        }
+        .footer-bottom p { color: var(--text-muted); font-size: 13px; }
+        .footer-bottom-links { display: flex; gap: 24px; list-style: none; }
+        .footer-bottom-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 13px;
+            transition: color 0.2s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--text-primary); }
+        @media (max-width: 900px) {
+            .quick-nav { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .step-item { grid-template-columns: 44px 1fr; padding: 20px; gap: 14px; }
+            .step-num { width: 34px; height: 34px; font-size: 14px; }
+            .quick-nav { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .section-head { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">E</div>
+                <span class="logo-text">EXIOFREEDOM</span>
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                返回首页
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span class="sep">›</span>
+                <span>支持中心</span>
+            </div>
+            <h1 class="page-title">
+                为你的每一步<br><span class="accent">提供专业协助</span>
+            </h1>
+            <p class="page-subtitle">
+                无论是初次上手的快速配置、健康分算法的细节理解，还是遇到数据导入导出的困扰，
+                在这里都能找到答案。如仍有疑问，我们的人工团队随时待命。
+            </p>
+            <div class="search-box">
+                <span class="search-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </span>
+                <input type="text" placeholder="搜索问题，如「如何开启 Face ID 锁？」…">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="quick-nav">
+            <a href="#quickstart" class="quick-card">
+                <div class="quick-icon blue">🚀</div>
+                <h4>快速开始</h4>
+                <p>5 步配置你的首份财务档案</p>
+            </a>
+            <a href="#faq" class="quick-card">
+                <div class="quick-icon green">❓</div>
+                <h4>常见问题</h4>
+                <p>FAQ 覆盖 90% 使用疑问</p>
+            </a>
+            <a href="#advanced" class="quick-card">
+                <div class="quick-icon gold">📊</div>
+                <h4>进阶使用</h4>
+                <p>健康分算法与情景模拟详解</p>
+            </a>
+            <a href="#contact" class="quick-card">
+                <div class="quick-icon purple">💬</div>
+                <h4>人工支持</h4>
+                <p>邮件与工单响应通道</p>
+            </a>
+        </div>
+
+        <section class="section" id="quickstart">
+            <div class="section-head">
+                <h2>快速开始 <span class="tag">5 分钟配置</span></h2>
+            </div>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>填写财务档案（Financial Profile）</h3>
+                        <p>打开 App 后，进入底部第 5 个 Tab「Settings」，滑动到「Financial Profile」部分，依次填写 Current Net Worth、Annual Income、Monthly Expenses、Total Debt、Expected Return、Inflation Rate 等核心字段。点击任意行即可进入编辑态，输入后全局自动同步。</p>
+                        <span class="tip">💡 所有数值仅保存在设备本地，不会上传云端</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>配置资产分类（Asset Allocation）</h3>
+                        <p>在 Dashboard 或 Settings 中找到「Asset Allocation」模块，点击右上角 + 新增你的资产类别（如股票、债券、现金、房产、加密货币等），并填入对应金额与备注。配置完成后健康分引擎会自动纳入投资多元化维度评分。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>设定你的 FIRE 目标</h3>
+                        <p>进入「Goals」Tab，点击 + 创建你的第一个里程碑目标——通常建议先设定「Emergency Fund（6 个月支出）」、然后是「25× 年度支出 FIRE Number」。系统会根据截止日期反推每月建议投入，并在临近节点时发送本地通知提醒。</p>
+                        <span class="tip">💡 目标进度基于剩余时间线性贡献算法，新建目标不会虚高</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>在 Scenario Simulator 推演未来</h3>
+                        <p>进入「Analysis」Tab，在 Scenario Simulator 中拖动 6 个参数滑块，观察「Months to Freedom」「FIRE Year」等关键指标的实时变化。建议先尝试提高储蓄率与投资收益率，这两者对缩短自由时间影响最大。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h3>开启生物识别与记录首笔流水</h3>
+                        <p>最后前往「Settings → Security & Privacy」开启 Face ID / Touch ID 安全锁；然后在 Transactions Tab 点击 + 记录今天的第一笔收入或支出。完成以上 5 步后，Dashboard 上的财务健康分将首次给出完整评估，后续的每一次提升都有迹可循。</p>
+                        <span class="tip">💡 别忘了在 Insight Tab 查看 Health Score 的 7 维度分项诊断</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <h2>常见问题 FAQ <span class="tag">TOP 热门</span></h2>
+            </div>
+            <div class="faq">
+                <div class="faq-item open">
+                    <div class="faq-q">
+                        <h4>EXIOFREEDOM 会把我的财务数据上传到云端吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>不会。默认情况下，您输入的所有财务数据（净资产、流水、目标、资产配置、健康分参数等）均存储在 iOS 系统分配给 EXIOFREEDOM 的本地沙盒中，通过 UserDefaults 加密持久化。我们不提供也不强制使用任何云端账户系统。</p>
+                            <p>如需备份或迁移，请使用「Settings → Data → Export Data」功能，导出的 CSV / JSON 文件可通过 AirDrop、iCloud Drive 等您信任的渠道自行保管。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>财务健康分（Health Score）是如何计算的？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>健康分基于 7 个维度加权得出（0–100 分），各维度满分占比与算法要点如下：</p>
+                            <ul>
+                                <li><strong>储蓄率（20%）：</strong>（月收入−月支出）/月收入，≥30% 为满分区间</li>
+                                <li><strong>应急储备（20%）：</strong>流动现金 ÷ 月支出，≥6 个月为满分</li>
+                                <li><strong>债务杠杆（15%）：</strong>总债务 ÷ 净资产，越低越好</li>
+                                <li><strong>投资配置（15%）：</strong>资产多元化程度与风险资产占比</li>
+                                <li><strong>收入多元度（10%）：</strong>是否配置被动收入来源</li>
+                                <li><strong>保险覆盖（10%）：</strong>基础保险完善度（自定义勾选）</li>
+                                <li><strong>目标进度（10%）：</strong>按 Goal 模块完成度综合评估</li>
+                            </ul>
+                            <p style="margin-top:12px;">此外，完成 Insight → Action 卡片中的任务会获得额外加成（最高 +60 分），加成来源会在 UI 上明确展示。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>Months to Freedom 出现异常或 NaN 怎么办？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>该算法在实现上已通过 <code>guard value &gt; 0, value.isFinite</code> 做了数学安全保护，正常使用不会出现 NaN。如仍遇到显示异常，请按以下顺序排查：</p>
+                            <ul>
+                                <li>确认「Expected Annual Return」大于 0 且小于 100（即不超过 100% 年化）</li>
+                                <li>确认「Monthly Savings」为正数，且「Annual Expenses × 25」&gt; 当前净资产</li>
+                                <li>前往「Settings → Data → Reset All Data」前先导出备份，再重新填入参数</li>
+                                <li>如仍未解决，请导出 CSV 并通过 support@exiofreedom.app 发送给我们</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>如何开启 Face ID / Touch ID 锁？为什么我找不到入口？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>请先在 iOS 系统级「设置 → 面容 ID 与密码」（或触控 ID）中至少注册 1 组生物特征。然后在 EXIOFREEDOM 中：</p>
+                            <ul>
+                                <li>进入底部 Tab 「Settings」</li>
+                                <li>找到分组 「Security & Privacy」</li>
+                                <li>打开 「Biometric Lock」开关即可</li>
+                            </ul>
+                            <p style="margin-top:12px;">开启后，App 每次从后台进入前台或冷启动时都会触发系统级生物验证，验证通过前内容被锁屏遮挡。</p>
+                            <p><strong>小提示：</strong>如果该开关置灰不可点，请检查系统「设置 → EXIOFREEDOM → 面容 ID」是否已授权。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>换了新手机，如何迁移我的数据？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>推荐以下 2 种方式迁移：</p>
+                            <ul>
+                                <li><strong>方式 A（推荐）：</strong>在旧设备「Settings → Data → Export Data → JSON」导出全量文件，通过 AirDrop 发送到新设备，在新设备安装后用系统分享面板「用 EXIOFREEDOM 打开」即可导入。</li>
+                                <li><strong>方式 B：</strong>将旧手机通过 iTunes / Finder 做完整本地备份后恢复到新手机，UserDefaults 沙盒中的全部数据会被完整迁移。</li>
+                            </ul>
+                            <p style="margin-top:12px;">请注意：CSV 文件仅包含流水与资产明细，不含主题偏好、Action 勾选等元数据，跨设备迁移建议优先使用 JSON 格式。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>本地通知（里程碑提醒）不触发怎么办？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>请依次检查：</p>
+                            <ul>
+                                <li>系统 「设置 → EXIOFREEDOM → 通知」 是否已允许通知，且「标记」「声音」「横幅」任一开启</li>
+                                <li>在 App 中「Settings → Notifications」确认 「Goal Milestone」 与 「Action Reminder」 开关已打开</li>
+                                <li>目标（Goal）需设置了未来的 Due Date，否则不会注册通知</li>
+                                <li>请勿在设置中关闭该 App 的「后台刷新」权限</li>
+                            </ul>
+                            <p style="margin-top:12px;">如仍异常，请长按 App 图标 → 「编辑主屏幕」→ 删除 App 后重装（务必先导出数据备份！）。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>情景模拟（Scenario Simulator）的 Base 值与 Current 值含义？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>在 Analysis Tab → Scenario Simulator 中，每个参数都有两行数值：</p>
+                            <ul>
+                                <li><strong>Base 值（灰色）：</strong>来自您在 Financial Profile 中填写的基线值，代表「不做任何调整」的现状，不可在该页面直接修改。</li>
+                                <li><strong>Current 值（金色高亮）：</strong>由滑块实时调整的模拟值，代表「假设我把参数改成这个值」。</li>
+                            </ul>
+                            <p style="margin-top:12px;">顶部的「预计 FIRE 年份」「自由倒计时」等结果始终基于 Current 值实时计算。若滑块全部归中，则 Current = Base，结果应与 Dashboard 基线一致。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <h4>可以和家人共用一份财务档案吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            <p>EXIOFREEDOM 当前为单机单用户设计，未内建多账户或家庭共享模块。如果您希望与家人共同管理：</p>
+                            <ul>
+                                <li>可以在同一台 iOS 设备上共用一个账户（需共用 Face ID / 设备密码）</li>
+                                <li>或通过定期导出 JSON 文件、再导入另一台设备的方式手动同步</li>
+                            </ul>
+                            <p style="margin-top:12px;">正式的家庭版（iCloud 多端同步 + 权限分级）已在我们的路线图中，预计 v2.5 版本提供。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="advanced">
+            <div class="section-head">
+                <h2>进阶使用指南</h2>
+            </div>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">A</div>
+                    <div class="step-content">
+                        <h3>用 Action 系统提升健康分</h3>
+                        <p>Insight Tab 中列出的 Action 卡片（如「建立 6 个月应急储备」「配置重疾险」「优化投资组合分散度」等）不仅是建议，勾选完成后还会直接为 Health Score 提供加分。每一项 Action 的难度等级决定了它的加分权重：Easy +5 / Medium +10 / Hard +15 / Expert +30。勾选状态通过 UserDefaults 持久化，可随时取消勾选回溯。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">B</div>
+                    <div class="step-content">
+                        <h3>CSV vs JSON 导出格式差异</h3>
+                        <p>CSV 适合导入 Excel / Numbers 做二次报表分析，文件包含 Transactions（流水）与 Assets（资产配置）两个逻辑 Sheet，但不含 App 偏好设置、Action 勾选状态、Goal 详细结构。JSON 则是完整的状态快照，包含 UserDefaults 中的全部键值，适合备份 / 跨设备迁移 / 程序化二次开发。</p>
+                        <span class="tip">💡 建议定期每月导出一次 JSON 作为冷备份</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">C</div>
+                    <div class="step-content">
+                        <h3>浅色 / 深色模式切换</h3>
+                        <p>前往 「Settings → Appearance」 可在「跟随系统 / 浅色 / 深色」间切换。主题偏好立即生效并通过 NotificationCenter 跨 Tab 实时刷新，同时持久化到 UserDefaults。Dashboard 的环形进度条、折线图颜色、卡片高亮色都已做了完整的主题适配。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-head">
+                <h2>仍未找到答案？联系人工支持</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon gold">📧</div>
+                    <h3>邮件支持</h3>
+                    <p class="desc">工作日 24 小时内人工响应，适合详细问题与日志反馈。</p>
+                    <a href="mailto:support@exiofreedom.app" class="contact-link">
+                        support@exiofreedom.app
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon blue">🐛</div>
+                    <h3>Bug 反馈通道</h3>
+                    <p class="desc">遇到崩溃、UI 错位、数据异常等问题，请附带导出的 JSON 或截图。</p>
+                    <a href="mailto:bugs@exiofreedom.app" class="contact-link">
+                        bugs@exiofreedom.app
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon green">💡</div>
+                    <h3>功能建议</h3>
+                    <p class="desc">有新的指标、新的图表、或者想看到 iCloud 同步？我们欢迎每一份产品思路。</p>
+                    <a href="mailto:feedback@exiofreedom.app" class="contact-link">
+                        feedback@exiofreedom.app
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-mark">E</div>
+                        <span class="logo-text">EXIOFREEDOM</span>
+                    </div>
+                    <p>为追求财务自由的人打造的高端个人理财追踪应用。以精密数据驱动，助力你实现财富自主、人生自由。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">核心功能</a></li>
+                        <li><a href="index.html#showcase">产品特性</a></li>
+                        <li><a href="index.html#security">安全与隐私</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="support.html">帮助中心</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EXIOFREEDOM. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item .faq-q').forEach(el => {
+            el.addEventListener('click', () => {
+                el.parentElement.classList.toggle('open');
+            });
+        });
+
+        const searchInput = document.querySelector('.search-box input');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim().toLowerCase();
+                if (!query) return;
+                const faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach(item => {
+                    const text = item.innerText.toLowerCase();
+                    if (text.includes(query)) {
+                        item.classList.add('open');
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

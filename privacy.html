@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 — EXIOFREEDOM</title>
+    <meta name="description" content="EXIOFREEDOM 隐私政策。了解我们如何收集、使用、存储和保护您的个人财务数据。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A25;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F0D060;
+            --accent-green: #34D399;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(212, 175, 55, 0.3);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 20px 0;
+            background: rgba(10, 10, 15, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+        .logo-mark {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 800; color: var(--bg-primary);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+        .logo-text {
+            background: linear-gradient(135deg, #F8FAFC 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
+            padding: 8px 16px; border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .nav-back:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
+        .page-header {
+            padding: 160px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+            width: 700px; height: 400px;
+            background: radial-gradient(ellipse, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header .container { position: relative; }
+        .breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; color: var(--text-muted); margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--text-primary); }
+        .breadcrumb .sep { color: var(--accent-gold); }
+        .page-title {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .page-title .accent {
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-subtitle {
+            font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.7;
+        }
+        .page-meta {
+            display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+        }
+        .meta-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 100px;
+            font-size: 13px; color: var(--text-secondary); font-weight: 500;
+        }
+        .meta-chip .dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green);
+        }
+        .toc {
+            margin: 40px 0 80px;
+            padding: 28px 32px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+        .toc-title {
+            font-size: 13px; font-weight: 700; color: var(--accent-gold);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .toc-list a {
+            display: flex; align-items: center; gap: 12px;
+            color: var(--text-secondary); text-decoration: none; font-size: 15px;
+            padding: 8px 12px; border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .toc-list a:hover {
+            color: var(--text-primary); background: rgba(255, 255, 255, 0.03);
+        }
+        .toc-list .toc-num {
+            width: 24px; height: 24px; border-radius: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-accent);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 700; color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+        .policy-section {
+            margin-bottom: 56px;
+        }
+        .policy-section h2 {
+            font-size: 24px; font-weight: 700; letter-spacing: -0.01em;
+            margin-bottom: 8px; display: flex; align-items: center; gap: 14px;
+        }
+        .section-num {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 800; color: var(--bg-primary);
+            flex-shrink: 0;
+        }
+        .section-sub {
+            font-size: 14px; color: var(--text-muted); margin: 0 0 20px 50px;
+        }
+        .policy-section p {
+            color: var(--text-secondary); font-size: 15px; line-height: 1.85; margin-bottom: 16px;
+        }
+        .policy-section ul {
+            list-style: none; margin: 8px 0 20px;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .policy-section li {
+            color: var(--text-secondary); font-size: 15px; line-height: 1.75;
+            padding-left: 24px; position: relative;
+        }
+        .policy-section li::before {
+            content: ''; position: absolute; left: 4px; top: 10px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent-gold); opacity: 0.7;
+        }
+        .callout {
+            margin: 24px 0;
+            padding: 20px 24px;
+            background: rgba(52, 211, 153, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 0 12px 12px 0;
+        }
+        .callout.warn {
+            background: rgba(212, 175, 55, 0.06);
+            border-color: var(--border-accent);
+            border-left-color: var(--accent-gold);
+        }
+        .callout p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+        .callout strong { color: var(--text-primary); font-weight: 600; }
+        .data-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+            margin: 20px 0 24px;
+        }
+        .data-card {
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+        }
+        .data-card-label {
+            font-size: 12px; font-weight: 600; color: var(--accent-gold);
+            letter-spacing: 0.04em; margin-bottom: 8px;
+        }
+        .data-card-text {
+            color: var(--text-secondary); font-size: 14px; line-height: 1.6;
+        }
+        footer {
+            padding: 80px 0 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 80px;
+        }
+        .footer-content {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 64px;
+        }
+        .footer-brand p {
+            color: var(--text-muted); font-size: 14px; line-height: 1.7;
+            margin-top: 16px; max-width: 320px;
+        }
+        .footer-col h4 {
+            font-size: 13px; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 20px; letter-spacing: 0.02em;
+        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-bottom {
+            padding-top: 32px; border-top: 1px solid var(--border-subtle);
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+        }
+        .footer-bottom p { color: var(--text-muted); font-size: 13px; }
+        .footer-bottom-links { display: flex; gap: 24px; list-style: none; }
+        .footer-bottom-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 13px;
+            transition: color 0.2s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--text-primary); }
+        @media (max-width: 900px) {
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .data-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .toc { padding: 20px; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .policy-section h2 { font-size: 20px; gap: 10px; }
+            .section-num { width: 30px; height: 30px; font-size: 12px; }
+            .section-sub { margin-left: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">E</div>
+                <span class="logo-text">EXIOFREEDOM</span>
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                返回首页
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span class="sep">›</span>
+                <span>法律</span>
+                <span class="sep">›</span>
+                <span>隐私政策</span>
+            </div>
+            <h1 class="page-title">
+                您的财务数据，<br><span class="accent">由您完全掌控</span>
+            </h1>
+            <p class="page-subtitle">
+                本隐私政策旨在透明说明 EXIOFREEDOM 如何对待您的信息。
+                我们坚持"数据最小化 + 本地存储优先"原则，绝不将您的财务数据上传至第三方服务器。
+            </p>
+            <div class="page-meta">
+                <span class="meta-chip"><span class="dot"></span> 最后更新：2026 年 8 月 13 日</span>
+                <span class="meta-chip">生效日期：2026 年 8 月 13 日</span>
+                <span class="meta-chip">适用版本：v2.0+</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="toc">
+            <div class="toc-title">目录</div>
+            <ul class="toc-list">
+                <li><a href="#s1"><span class="toc-num">1</span>我们收集的信息</a></li>
+                <li><a href="#s2"><span class="toc-num">2</span>信息的使用方式</a></li>
+                <li><a href="#s3"><span class="toc-num">3</span>数据存储与安全</a></li>
+                <li><a href="#s4"><span class="toc-num">4</span>生物识别信息</a></li>
+                <li><a href="#s5"><span class="toc-num">5</span>第三方服务</a></li>
+                <li><a href="#s6"><span class="toc-num">6</span>您的数据权利</a></li>
+                <li><a href="#s7"><span class="toc-num">7</span>儿童隐私</a></li>
+                <li><a href="#s8"><span class="toc-num">8</span>政策变更</a></li>
+                <li><a href="#s9"><span class="toc-num">9</span>联系我们</a></li>
+            </ul>
+        </nav>
+
+        <section class="policy-section" id="s1">
+            <h2><span class="section-num">1</span> 我们收集的信息</h2>
+            <p class="section-sub">Information We Collect</p>
+            <p>
+                EXIOFREEDOM 采用"本地优先"架构，绝大多数数据由您直接输入并仅存储于您的个人设备上。
+                我们仅收集极少量运行所必需的信息，且不涉及可识别个人身份的财务内容上传。
+            </p>
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-card-label">◈ 仅存储于本地</div>
+                    <div class="data-card-text">
+                        您输入的净资产、收支流水、资产配置、目标金额、交易记录、情景参数等所有财务内容均保存在设备本地 UserDefaults 沙盒中。
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">◈ 不上传云端</div>
+                    <div class="data-card-text">
+                        除非您主动通过 iOS 系统分享功能导出 CSV / JSON 文件，否则我们的服务器不会接收、存储或处理任何上述财务数据。
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">◈ 应用使用统计（可选）</div>
+                    <div class="data-card-text">
+                        若您同意，Apple 可能会向开发者提供匿名崩溃报告与统计数据，用于改善产品稳定性。此部分由 iOS 系统级控制。
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">◈ 本地通知</div>
+                    <div class="data-card-text">
+                        目标里程碑提醒、Action 到期提醒等通知注册于本地 UNUserNotificationCenter，不经过外部服务器中转。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="policy-section" id="s2">
+            <h2><span class="section-num">2</span> 信息的使用方式</h2>
+            <p class="section-sub">How We Use Information</p>
+            <p>
+                我们仅在以下场景使用信息，且所有计算均在本地完成：
+            </p>
+            <ul>
+                <li>运行财务健康分（Health Score）算法，计算储蓄率、债务杠杆、应急储备等七维度评分；</li>
+                <li>执行情景模拟（Scenario Simulator）的复利、通胀校正与 Months-to-Freedom 计算；</li>
+                <li>根据目标（Goal）截止日期和金额，自动生成月度投入建议并触发本地通知；</li>
+                <li>驱动 Application Badge、Widget 等系统级 UI 组件显示您最新的财务概览；</li>
+                <li>通过 NotificationCenter 在 TabBar 五个页面间同步数据变更刷新，不涉及跨设备传输。</li>
+            </ul>
+            <div class="callout">
+                <p><strong>✓ 原则承诺：</strong>我们不会将您的财务数据用于广告投放、用户画像构建、信用评估或出售给任何第三方机构。</p>
+            </div>
+        </section>
+
+        <section class="policy-section" id="s3">
+            <h2><span class="section-num">3</span> 数据存储与安全</h2>
+            <p class="section-sub">Data Storage & Security</p>
+            <p>
+                我们采用 iOS 平台提供的多种安全机制，多层次保护您的数据安全：
+            </p>
+            <ul>
+                <li>
+                    <strong>沙盒隔离：</strong>
+                    应用数据存储于独立沙盒目录，其他应用在未授权情况下无法读取；
+                </li>
+                <li>
+                    <strong>File Protection：</strong>
+                    支持 Data Protection API，根据设备锁屏状态自动加密持久化文件；
+                </li>
+                <li>
+                    <strong>敏感字段哈希：</strong>
+                    对于内部标识类字段，使用 FNV-1a 非可逆哈希算法处理，避免明文比对；
+                </li>
+                <li>
+                    <strong>数学安全防护：</strong>
+                    所有涉及复利、对数的计算（如 monthsToFreedom）均通过 guard isFinite 判断，防止 NaN 崩溃或异常状态泄露；
+                </li>
+                <li>
+                    <strong>可控导出：</strong>
+                    CSV / JSON 导出通过系统分享面板（UIActivityViewController），由您主动选择目标接收方。
+                </li>
+            </ul>
+        </section>
+
+        <section class="policy-section" id="s4">
+            <h2><span class="section-num">4</span> 生物识别信息</h2>
+            <p class="section-sub">Biometric Information</p>
+            <p>
+                EXIOFREEDOM 提供可选的 Face ID / Touch ID 生物识别安全锁功能（BiometricService）：
+            </p>
+            <ul>
+                <li>生物识别身份验证完全由 iOS 系统 LocalAuthentication 框架执行；</li>
+                <li>我们<strong>从不读取、存储或上传</strong>您的指纹、面容或任何生物特征模板；</li>
+                <li>应用仅接收系统返回的验证成功 / 失败布尔值，用于决定是否解锁主界面；</li>
+                <li>您可随时在 App「设置 → 安全与隐私」中关闭生物识别锁，改用无密码直入模式。</li>
+            </ul>
+            <div class="callout warn">
+                <p><strong>⚠️ 请注意：</strong>若您的设备启用了多生物特征（如多个指纹或面容），所有已注册的生物特征均可解锁 EXIOFREEDOM。若需更严格的访问控制，请在 iOS「设置 → 面容 ID 与密码」中管理。</p>
+            </div>
+        </section>
+
+        <section class="policy-section" id="s5">
+            <h2><span class="section-num">5</span> 第三方服务</h2>
+            <p class="section-sub">Third-Party Services</p>
+            <p>
+                当前版本的 EXIOFREEDOM 未嵌入任何第三方分析 SDK、广告 SDK 或社交登录 SDK。应用运行所依赖的系统级框架包括：
+            </p>
+            <ul>
+                <li><strong>UIKit / Foundation：</strong>iOS 系统基础框架；</li>
+                <li><strong>UserNotifications：</strong>本地通知调度；</li>
+                <li><strong>LocalAuthentication：</strong>生物识别验证；</li>
+                <li><strong>CoreGraphics / CoreAnimation：</strong>图表与动画渲染（均为离线计算）。</li>
+            </ul>
+            <p>
+                若未来版本引入新的第三方服务，我们将在本政策中显著更新并在应用内首次弹窗征得您的明示同意。
+            </p>
+        </section>
+
+        <section class="policy-section" id="s6">
+            <h2><span class="section-num">6</span> 您的数据权利</h2>
+            <p class="section-sub">Your Data Rights</p>
+            <p>
+                遵循 GDPR、CCPA 以及其他适用的数据保护法规，您对自己的数据享有以下权利，且 EXIOFREEDOM 从架构层面赋予您直接执行的能力：
+            </p>
+            <ul>
+                <li>
+                    <strong>访问权：</strong>
+                    在「设置 → 财务档案」中可直接查看当前所有财务档案数值；
+                </li>
+                <li>
+                    <strong>修改权：</strong>
+                    上述数值均可通过点击单元格进入编辑态实时修改，并通过 NotificationCenter 全局同步；
+                </li>
+                <li>
+                    <strong>导出权：</strong>
+                    在「设置 → Data → Export Data」一键导出全量 CSV 与 JSON 文件；
+                </li>
+                <li>
+                    <strong>删除权：</strong>
+                    在「设置 → Data → Reset All Data」可一键清空应用内所有用户数据（操作不可撤销，请谨慎）。
+                </li>
+            </ul>
+            <p>
+                如您对行使数据权利有疑问或需要人工协助，请通过第 9 节的方式联系我们，我们将在 15 个工作日内响应。
+            </p>
+        </section>
+
+        <section class="policy-section" id="s7">
+            <h2><span class="section-num">7</span> 儿童隐私</h2>
+            <p class="section-sub">Children's Privacy</p>
+            <p>
+                EXIOFREEDOM 是为具有独立财务决策能力的成年用户设计的理财工具，不面向 13 周岁（或您所在司法辖区规定的更高年龄）以下的儿童。
+                我们不会主动收集儿童的任何个人信息。若您作为监护人发现儿童未经许可使用本应用，可随时通过第 6 节所述方式清除数据，并联系我们。
+            </p>
+        </section>
+
+        <section class="policy-section" id="s8">
+            <h2><span class="section-num">8</span> 政策变更</h2>
+            <p class="section-sub">Changes to This Policy</p>
+            <p>
+                当法律要求变更或产品功能发生影响数据处理方式的重大调整时，我们会更新本隐私政策。任何变更将：
+            </p>
+            <ul>
+                <li>在本页面标注新的"最后更新"与"生效日期"；</li>
+                <li>通过应用内启动弹窗或系统通知方式提示您重新阅读；</li>
+                <li>对于扩大使用范围的变更，先取得您的<strong>明示同意</strong>后才会生效。</li>
+            </ul>
+            <p>
+                我们建议您定期查阅本页面以获取最新版本。继续使用 EXIOFREEDOM 即视为您接受更新后的政策内容。
+            </p>
+        </section>
+
+        <section class="policy-section" id="s9">
+            <h2><span class="section-num">9</span> 联系我们</h2>
+            <p class="section-sub">Contact Us</p>
+            <p>
+                如您对本隐私政策、数据处理或产品安全有任何疑问、投诉或建议，欢迎通过以下渠道联系我们。我们承诺对每一封邮件都会由人工认真审阅。
+            </p>
+            <div class="data-grid" style="margin-top: 24px;">
+                <div class="data-card">
+                    <div class="data-card-label">📧 邮件支持</div>
+                    <div class="data-card-text">
+                        privacy@exiofreedom.app<br>
+                        （通常 1-3 个工作日内回复）
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">📄 支持页面</div>
+                    <div class="data-card-text">
+                        请访问 <a href="support.html" style="color: var(--accent-gold);">support.html</a><br>
+                        查看 FAQ 与快速指南
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">📍 运营主体</div>
+                    <div class="data-card-text">
+                        EXIOFREEDOM Team<br>
+                        中华人民共和国 · 上海市
+                    </div>
+                </div>
+                <div class="data-card">
+                    <div class="data-card-label">⚡ 紧急安全问题</div>
+                    <div class="data-card-text">
+                        邮件主题请标注「<strong style="color: var(--text-primary);">URGENT: SECURITY</strong>」
+                        我们将优先处理
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-mark">E</div>
+                        <span class="logo-text">EXIOFREEDOM</span>
+                    </div>
+                    <p>为追求财务自由的人打造的高端个人理财追踪应用。以精密数据驱动，助力你实现财富自主、人生自由。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">核心功能</a></li>
+                        <li><a href="index.html#showcase">产品特性</a></li>
+                        <li><a href="index.html#security">安全与隐私</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="support.html">帮助中心</a></li>
+                        <li><a href="support.html#faq">常见问题</a></li>
+                        <li><a href="support.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EXIOFREEDOM. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务条款 — EXIOFREEDOM</title>
+    <meta name="description" content="EXIOFREEDOM 服务条款。使用本应用前请仔细阅读本协议，包括使用许可、投资免责、责任限制与争议解决条款。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A25;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F0D060;
+            --accent-green: #34D399;
+            --accent-red: #F87171;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(212, 175, 55, 0.3);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 20px 0;
+            background: rgba(10, 10, 15, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
+        .logo-mark {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 800; color: var(--bg-primary);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+        .logo-text {
+            background: linear-gradient(135deg, #F8FAFC 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
+            padding: 8px 16px; border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .nav-back:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
+        .page-header {
+            padding: 160px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: ''; position: absolute; top: -30%; right: -10%;
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header .container { position: relative; }
+        .breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; color: var(--text-muted); margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--text-primary); }
+        .breadcrumb .sep { color: var(--accent-gold); }
+        .page-title {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .page-title .accent {
+            background: linear-gradient(135deg, var(--accent-gold-light), #A78BFA);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-subtitle {
+            font-size: 17px; color: var(--text-secondary); max-width: 680px; line-height: 1.7;
+        }
+        .page-meta { display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
+        .meta-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 100px;
+            font-size: 13px; color: var(--text-secondary); font-weight: 500;
+        }
+        .meta-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-gold); }
+        .accept-banner {
+            margin: 40px 0 72px;
+            padding: 20px 24px;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid var(--border-accent);
+            border-radius: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .accept-icon {
+            flex-shrink: 0;
+            width: 40px; height: 40px; border-radius: 12px;
+            background: rgba(212, 175, 55, 0.12);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+        }
+        .accept-banner h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .accept-banner p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .accept-banner a { color: var(--accent-gold); text-decoration: underline; text-underline-offset: 2px; }
+        .toc {
+            margin: 0 0 80px;
+            padding: 28px 32px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+        .toc-title {
+            font-size: 13px; font-weight: 700; color: var(--accent-gold);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .toc-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; }
+        .toc-list a {
+            display: flex; align-items: center; gap: 10px;
+            color: var(--text-secondary); text-decoration: none; font-size: 14px;
+            padding: 6px 10px; border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .toc-list a:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.03); }
+        .toc-num {
+            width: 22px; height: 22px; border-radius: 6px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--border-accent);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 700; color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+        .terms-section { margin-bottom: 56px; }
+        .terms-section h2 {
+            font-size: 22px; font-weight: 700; letter-spacing: -0.01em;
+            margin-bottom: 8px; display: flex; align-items: center; gap: 14px;
+        }
+        .section-num {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 800; color: var(--bg-primary);
+            flex-shrink: 0;
+        }
+        .section-sub { font-size: 13px; color: var(--text-muted); margin: 0 0 20px 48px; }
+        .terms-section h3 {
+            font-size: 16px; font-weight: 700;
+            margin: 24px 0 10px;
+            padding-left: 16px;
+            border-left: 2px solid var(--accent-gold);
+        }
+        .terms-section p {
+            color: var(--text-secondary); font-size: 15px; line-height: 1.85; margin-bottom: 14px;
+        }
+        .terms-section ul, .terms-section ol {
+            margin: 6px 0 18px;
+            padding-left: 22px;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .terms-section li {
+            color: var(--text-secondary); font-size: 15px; line-height: 1.75;
+        }
+        .terms-section li strong { color: var(--text-primary); font-weight: 600; }
+        .callout {
+            margin: 24px 0;
+            padding: 20px 24px;
+            background: rgba(248, 113, 113, 0.06);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            border-left: 3px solid var(--accent-red);
+            border-radius: 0 12px 12px 0;
+        }
+        .callout.neutral {
+            background: rgba(96, 165, 250, 0.06);
+            border-color: rgba(96, 165, 250, 0.2);
+            border-left-color: var(--accent-blue);
+        }
+        .callout p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+        .callout strong { color: var(--text-primary); font-weight: 600; }
+        .callout-title {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+            color: var(--accent-red);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .callout.neutral .callout-title { color: var(--accent-blue); }
+        .grid-2 {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+            margin: 16px 0 24px;
+        }
+        .box {
+            padding: 18px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+        }
+        .box-label {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+            color: var(--accent-gold); text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .box-text { color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
+        footer {
+            padding: 80px 0 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 64px;
+        }
+        .footer-brand p {
+            color: var(--text-muted); font-size: 14px; line-height: 1.7;
+            margin-top: 16px; max-width: 320px;
+        }
+        .footer-col h4 {
+            font-size: 13px; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 20px; letter-spacing: 0.02em;
+        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-bottom {
+            padding-top: 32px; border-top: 1px solid var(--border-subtle);
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+        }
+        .footer-bottom p { color: var(--text-muted); font-size: 13px; }
+        .footer-bottom-links { display: flex; gap: 24px; list-style: none; }
+        .footer-bottom-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 13px;
+            transition: color 0.2s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--text-primary); }
+        @media (max-width: 900px) {
+            .toc-list { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .toc { padding: 20px; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .terms-section h2 { font-size: 19px; gap: 10px; }
+            .section-num { width: 30px; height: 30px; font-size: 12px; }
+            .section-sub { margin-left: 40px; }
+            .accept-banner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">E</div>
+                <span class="logo-text">EXIOFREEDOM</span>
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                返回首页
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span class="sep">›</span>
+                <span>法律</span>
+                <span class="sep">›</span>
+                <span>服务条款</span>
+            </div>
+            <h1 class="page-title">
+                EXIOFREEDOM<br><span class="accent">服务条款协议</span>
+            </h1>
+            <p class="page-subtitle">
+                请在下载或使用 EXIOFREEDOM 应用前仔细阅读本协议。
+                本协议构成您与 EXIOFREEDOM Team 之间具有法律效力的合同。一旦安装或使用 App，即视为您已完全理解并同意以下所有条款。
+            </p>
+            <div class="page-meta">
+                <span class="meta-chip"><span class="dot"></span> 最后更新：2026 年 8 月 13 日</span>
+                <span class="meta-chip">生效日期：2026 年 8 月 13 日</span>
+                <span class="meta-chip">文档版本：v2.0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="accept-banner">
+            <div class="accept-icon">📜</div>
+            <div>
+                <h4>关于本协议</h4>
+                <p>
+                    本协议与 <a href="privacy.html">《隐私政策》</a>、App Store 最终用户许可协议（EULA）共同构成您使用 EXIOFREEDOM 的完整法律依据。
+                    如对条款有任何疑问，请在使用前通过 <a href="support.html#contact">support@exiofreedom.app</a> 联系我们。
+                </p>
+            </div>
+        </div>
+
+        <nav class="toc">
+            <div class="toc-title">条款目录</div>
+            <ul class="toc-list">
+                <li><a href="#s1"><span class="toc-num">1</span>协议双方与接受</a></li>
+                <li><a href="#s2"><span class="toc-num">2</span>使用许可与限制</a></li>
+                <li><a href="#s3"><span class="toc-num">3</span>用户数据与内容</a></li>
+                <li><a href="#s4"><span class="toc-num">4</span>重要投资免责声明</a></li>
+                <li><a href="#s5"><span class="toc-num">5</span>健康分算法声明</a></li>
+                <li><a href="#s6"><span class="toc-num">6</span>承诺与保证</a></li>
+                <li><a href="#s7"><span class="toc-num">7</span>责任限制</a></li>
+                <li><a href="#s8"><span class="toc-num">8</span>付费与订阅</a></li>
+                <li><a href="#s9"><span class="toc-num">9</span>服务变更与终止</a></li>
+                <li><a href="#s10"><span class="toc-num">10</span>知识产权</a></li>
+                <li><a href="#s11"><span class="toc-num">11</span>条款更新</a></li>
+                <li><a href="#s12"><span class="toc-num">12</span>法律适用与争议</a></li>
+                <li><a href="#s13"><span class="toc-num">13</span>可分割性与全部</a></li>
+                <li><a href="#s14"><span class="toc-num">14</span>联系信息</a></li>
+            </ul>
+        </nav>
+
+        <section class="terms-section" id="s1">
+            <h2><span class="section-num">1</span> 协议双方与接受</h2>
+            <p class="section-sub">Parties & Acceptance</p>
+            <h3>1.1 协议主体</h3>
+            <p>
+                本 End User License Agreement（以下简称"本协议"）由以下双方缔结：
+                <strong>甲方（用户）：</strong>下载、安装、注册或使用 EXIOFREEDOM 应用程序（下称"本应用"或"EXIOFREEDOM"）的自然人或法人实体；
+                <strong>乙方（运营方）：</strong>EXIOFREEDOM Team（注册地：中华人民共和国上海市）。
+            </p>
+            <h3>1.2 协议的接受</h3>
+            <p>
+                您一旦在 App Store 点击"获取 / 安装"、首次启动本应用、或点击"我同意"按钮（如有），
+                即表示您已阅读、理解并完全接受本协议的全部条款，以及 Apple Inc. 通过 App Store 向您提供的标准 EULA 条款（如两者有冲突，以对用户限制较少者为准）。
+            </p>
+            <h3>1.3 年龄与能力</h3>
+            <p>
+                您必须年满 18 周岁（或您所在司法辖区的法定成年年龄），且具备完全民事行为能力方可订立本协议。
+                未满 18 周岁的未成年人请在法定监护人陪同下阅读本协议并取得其同意后使用本应用。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s2">
+            <h2><span class="section-num">2</span> 使用许可与限制</h2>
+            <p class="section-sub">License & Restrictions</p>
+            <h3>2.1 许可授予</h3>
+            <p>
+                在您持续遵守本协议的前提下，乙方授予您一项<strong>个人的、非独占的、不可转让的、不可再许可的、可撤销</strong>的有限许可，
+                允许您在您所拥有或控制的 Apple iOS 设备（iPhone / iPad）上安装和运行 EXIOFREEDOM 可执行二进制代码的一份副本，
+                仅用于您个人的财务管理与规划目的，不得用于任何商业活动。
+            </p>
+            <h3>2.2 您明确不得从事以下行为</h3>
+            <ul>
+                <li>对本应用进行反向工程、反编译、反汇编、解密或以其他方式尝试获取源代码；</li>
+                <li>修改、翻译、改编、合并、制作衍生作品，或对本应用进行性能基准测试后对外披露结果；</li>
+                <li>通过租赁、出借、出售、转授权、分时共享、托管服务等方式向第三方提供本应用的使用权；</li>
+                <li>移除、修改或遮盖本应用中的任何版权声明、商标、水印、法律条款标识；</li>
+                <li>利用自动化工具（机器人、爬虫、脚本）批量访问、读取或干扰本应用的正常运行；</li>
+                <li>利用本应用从事任何违反中华人民共和国或您所在辖区法律、法规、监管规定的行为。</li>
+            </ul>
+            <div class="callout neutral">
+                <div class="callout-title">🔗 App Store 条款优先</div>
+                <p>
+                    <strong>请注意：</strong>本许可同时受 Apple App Store 最终用户许可协议（Standard EULA）约束。
+                    如本协议第 2.1 条授予的权利与 Apple EULA 存在不一致，以 Apple EULA 中限制较少者为准。
+                </p>
+            </div>
+        </section>
+
+        <section class="terms-section" id="s3">
+            <h2><span class="section-num">3</span> 用户数据与内容</h2>
+            <p class="section-sub">User Data & Content</p>
+            <h3>3.1 数据所有权</h3>
+            <p>
+                <strong>您在本应用中输入、创建、编辑的所有财务数据（包括但不限于净资产、收支流水、资产配置、目标、Action 勾选记录等）之所有权与全部权益均归您本人所有。</strong>
+                EXIOFREEDOM Team 不会、也无法主张对这些数据的任何权利。
+            </p>
+            <h3>3.2 数据处理原则</h3>
+            <p>
+                除《隐私政策》明确列举的情形外，乙方默认不向任何第三方服务器上传、存储或处理您的财务数据；
+                所有计算（健康分、情景模拟、复利预测）均在设备本地完成。
+                如需数据同步或云端备份功能，将由您通过 iOS 系统级能力（iCloud Backup、AirDrop、Files App）自主执行并承担相应决策。
+            </p>
+            <h3>3.3 您的责任</h3>
+            <p>您应自行对所输入数据的真实性、准确性、完整性与合法性负责，并承担以下义务：</p>
+            <ul>
+                <li>定期通过「Settings → Data → Export Data」导出 JSON / CSV 并做好离线备份；</li>
+                <li>妥善保管 iOS 设备密码、Face ID / Touch ID 生物特征，避免被非授权访问；</li>
+                <li>不得在本应用中存储他人的身份信息、银行账户、交易密码等敏感数据。</li>
+            </ul>
+        </section>
+
+        <section class="terms-section" id="s4">
+            <h2><span class="section-num">4</span> 重要投资免责声明</h2>
+            <p class="section-sub">Critical Investment Disclaimer</p>
+            <div class="callout">
+                <div class="callout-title">⚠️ 法律强制提示</div>
+                <p>
+                    <strong>本应用不构成任何形式的投资建议、税务建议、法律建议或金融产品推介。</strong>
+                    EXIOFREEDOM Team 未持有中国证券监督管理委员会（CSRC）、美国证券交易委员会（SEC）或其他任何司法辖区颁发的投资顾问、资产管理、证券经纪、保险经纪、税务代理等相关牌照。
+                </p>
+            </div>
+            <h3>4.1 教育与信息展示用途</h3>
+            <p>
+                EXIOFREEDOM 所展示的「财务健康分」「预计 FIRE 年份」「Months to Freedom」「资产配置饼图」「情景模拟」等数值与可视化内容，
+                <strong>均仅基于您输入的参数与通用数学模型生成，用于自我教育与规划参考</strong>，
+                不得被理解为对任何股票、基金、债券、加密货币、不动产、保险产品或其他金融工具的买卖建议、业绩承诺或收益担保。
+            </p>
+            <h3>4.2 模型局限性</h3>
+            <p>您明确知悉并同意：</p>
+            <ul>
+                <li>复利模型基于历史资本市场规律，<strong>不能代表未来实际收益</strong>。实际投资回报可能因市场系统性风险、黑天鹅事件、政策变动、税费调整等因素显著偏离预测；</li>
+                <li>"Trinity Study 4% 提取率""FIRE 金额 = 年度支出 × 25"等范式为学术界与社区的通用经验公式，乙方不对其普适性或持续性做任何保证；</li>
+                <li>健康分算法为基于有限假设的评分工具，<strong>不替代专业注册理财师（CFP®）出具的个性化财务规划</strong>。</li>
+            </ul>
+            <div class="grid-2">
+                <div class="box">
+                    <div class="box-label">您应当</div>
+                    <div class="box-text">
+                        在做出重大投资 / 借贷 / 保险决策前，咨询持牌独立金融顾问、注册税务师与律师，并结合您的个人风险承受能力与流动性需求综合判断。
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-label">您不得</div>
+                    <div class="box-text">
+                        将本应用中的任何数值作为向银行、保险公司、券商或税务机关提交报告的唯一依据，也不得据此主张乙方承担任何交易损失的赔偿责任。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="terms-section" id="s5">
+            <h2><span class="section-num">5</span> 健康分与算法声明</h2>
+            <p class="section-sub">Scoring & Algorithm Disclosures</p>
+            <p>
+                财务健康分（Health Score）及其 7 个维度（储蓄率、应急储备、债务杠杆、投资配置、收入多元度、保险覆盖、目标进度）的算法逻辑、
+                权重分布、Action 加分规则属于 EXIOFREEDOM 的方法论资产。
+                乙方将尽商业合理努力保证算法的一致性，但保留在版本迭代中调整权重、增加维度、修订评分阈值的权利，
+                且该等调整<strong>不构成对任何既有评分结果的追溯违约或赔偿义务</strong>。
+            </p>
+            <p>
+                为避免数学运行时异常，复利与对数运算在实现上已做 isFinite guard。
+                若因极端输入导致 UI 显示 NaN、INF 或数值异常，请按《支持中心》FAQ 流程导出数据并联系我们修复，
+                <strong>乙方不对显示异常所导致的决策后果承担责任</strong>。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s6">
+            <h2><span class="section-num">6</span> 承诺与保证</h2>
+            <p class="section-sub">Warranties</p>
+            <h3>6.1 乙方的有限保证</h3>
+            <p>
+                乙方保证 EXIOFREEDOM 在正常使用条件下：(a) 将基本符合 App Store 产品页面与应用内说明文档所描述的核心功能；
+                (b) 不含恶意代码、后门程序或主动窃取用户数据的逻辑。
+                上述保证的期限为自您下载之日起 <strong>90 个自然日</strong>。
+            </p>
+            <h3>6.2 免责声明（AS IS）</h3>
+            <p>
+                除 6.1 条明确约定外，在法律允许的最大范围内，
+                <strong>本应用以"现状（AS IS）"与"可用（AS AVAILABLE）"为基础提供，乙方及其供应商、合作伙伴不作任何明示或默示的保证</strong>，
+                包括但不限于对适销性、特定用途适用性、不侵权、无错误、无中断、持续可用、无病毒、无缺陷的默示保证。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s7">
+            <h2><span class="section-num">7</span> 责任限制</h2>
+            <p class="section-sub">Limitation of Liability</p>
+            <div class="callout">
+                <div class="callout-title">💥 关键条款</div>
+                <p>
+                    <strong>请您特别注意本条，它限制了乙方对您可能承担的总赔偿金额。</strong>
+                    在中国大陆法律不禁止的范围内，您同意以下责任限制安排。
+                </p>
+            </div>
+            <h3>7.1 间接损失免责</h3>
+            <p>
+                在任何情况下，乙方、其关联公司、董事、员工、代理商、合作伙伴均不对以下损失承担责任（即使乙方已被告知该等损失的可能性）：
+            </p>
+            <ul>
+                <li>间接损失、附带损失、特殊损失、结果性损失、惩罚性损失；</li>
+                <li>投资收益损失、交易机会损失、商誉损失、数据丢失损失、利润损失、利息损失；</li>
+                <li>因依赖本应用输出数值做出财务决策所产生的任何第三方索赔。</li>
+            </ul>
+            <h3>7.2 责任上限</h3>
+            <p>
+                在法律许可的最大范围内，乙方因本协议或与本协议相关的一切行为（包括疏忽）对您所承担的<strong>全部累计赔偿责任上限</strong>，
+                以您在争议发生前 <strong>12 个月内就本应用已实际支付的全部费用总额为限</strong>（若为免费版 / 一次性买断版，则以您在 App Store 实际支付的购买对价，或人民币 68 元两者中的较高者为上限）。
+            </p>
+            <h3>7.3 不可排除的情形</h3>
+            <p>
+                本条不适用于乙方因故意或重大过失导致的人身损害赔偿，以及适用法律强制不可排除的其他法定责任（如中国大陆《消费者权益保护法》第 55 条下的欺诈情形）。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s8">
+            <h2><span class="section-num">8</span> 付费与订阅（如有）</h2>
+            <p class="section-sub">Pricing & Subscriptions</p>
+            <p>
+                EXIOFREEDOM 当前发行版本采取 <strong>App Store 一次性买断（Paid Upfront）</strong>模式，无应用内订阅、无广告、无内购解锁模块。
+                若未来版本引入订阅制或额外付费模块（如 iCloud 家庭同步、高级 API 接入等），将遵循以下规则：
+            </p>
+            <ul>
+                <li>所有收费将通过 Apple App Store 官方 Billing 系统处理，由您的 Apple ID 账户扣款，乙方从不直接收集银行卡信息；</li>
+                <li>订阅自动续费与取消流程完全遵循 Apple 官方机制，您可在 iOS「设置 → Apple ID → 订阅」中随时管理或取消；</li>
+                <li>退款事宜依照 App Store 退款政策向 Apple 申请，乙方无权在 App Store 体系外直接操作退款。</li>
+            </ul>
+        </section>
+
+        <section class="terms-section" id="s9">
+            <h2><span class="section-num">9</span> 服务变更与终止</h2>
+            <p class="section-sub">Modifications & Termination</p>
+            <h3>9.1 变更权</h3>
+            <p>
+                乙方可随时基于技术迭代、合规要求、安全修复、功能优化等商业合理理由，
+                对本应用的功能、UI、算法、评分体系进行修改、暂停或中止，无需承担提前通知义务，但重大变更将在 App Store 版本更新日志中列明。
+            </p>
+            <h3>9.2 用户主动终止</h3>
+            <p>
+                您可随时通过 iOS 系统长按 App 图标删除 EXIOFREEDOM 来终止本协议。
+                删除前请务必通过"Export Data"功能完成数据备份，<strong>删除 App 将同时清除沙盒内全部数据，且无法恢复</strong>。
+            </p>
+            <h3>9.3 因违约终止</h3>
+            <p>
+                如您严重违反本协议（例如第 2.2 条禁止的逆向工程、商业盗用等行为），乙方有权通过 Apple 机制提交版权投诉，
+                并保留追究法律责任的权利。本条终止不影响任何既得权利或已发生义务的履行。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s10">
+            <h2><span class="section-num">10</span> 知识产权</h2>
+            <p class="section-sub">Intellectual Property</p>
+            <p>
+                EXIOFREEDOM 的名称、Logo、图标设计、UI / UX 主题（含深色 / 浅色 Gold Accent 配色体系）、
+                代码架构、WealthDataManager 算法模型、Health Score 七维评分法、Scenario Simulator 交互设计、
+                图表组件（LineChart / PieChart / CircularProgress / BarChart）、GlowLayer 动效等所有视觉、交互与技术成果，
+                其<strong>著作权、商标权、专利权（如有）、商业秘密等知识产权均归 EXIOFREEDOM Team 所有</strong>，受《中华人民共和国著作权法》及相关国际公约保护。
+            </p>
+            <p>
+                未经乙方书面授权，您不得以任何形式（包括但不限于截图录屏再制作、素材提取复现、AI 训练输入等）
+                用于竞品开发、商业发布或公开展示。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s11">
+            <h2><span class="section-num">11</span> 条款更新</h2>
+            <p class="section-sub">Updates to Terms</p>
+            <p>
+                我们可能基于以下原因更新本条款：法律 / 监管要求变更、商业模式调整（如引入订阅）、新增功能改变用户权利义务。
+                任何更新都将：
+            </p>
+            <ul>
+                <li>在本页标注新的"最后更新日期"与"生效日期"；</li>
+                <li>在应用内通过显著弹窗或系统通知形式告知，并在获得您的明示同意后适用；</li>
+                <li>如您不同意更新后的条款，应停止使用并卸载本应用，删除行为不影响更新前已产生的责任义务。</li>
+            </ul>
+        </section>
+
+        <section class="terms-section" id="s12">
+            <h2><span class="section-num">12</span> 法律适用与争议解决</h2>
+            <p class="section-sub">Governing Law & Disputes</p>
+            <h3>12.1 准据法</h3>
+            <p>
+                本协议的订立、效力、解释、履行、变更、终止与争议解决，<strong>均适用中华人民共和国大陆地区法律（不含港澳台地区法律与冲突法规则）</strong>。
+                若您位于其他司法辖区并对适用法有强制要求，以该辖区不可排除的法定消费者保护规定优先。
+            </p>
+            <h3>12.2 友好协商优先</h3>
+            <p>
+                因本协议产生的任何争议、分歧或索赔，双方应首先通过善意协商解决。
+                请发送邮件至 legal@exiofreedom.app 并附上详细说明与联系电话，我们将在 15 个工作日内指派专人对接。
+            </p>
+            <h3>12.3 司法管辖</h3>
+            <p>
+                如协商不成 30 日仍未解决，任何一方均有权向<strong>上海市浦东新区人民法院</strong>提起一审诉讼。
+                双方同意该法院享有非排他性管辖权，并同意放弃以管辖异议拖延程序的权利。
+            </p>
+            <div class="callout neutral">
+                <div class="callout-title">🌐 跨境用户提示</div>
+                <p>
+                    若您为欧盟（GDPR 辖区）、美国加州（CCPA）等地居民，本协议与《隐私政策》中被当地法律强制保护的权利不受任何条款限制；
+                    如本条款中任何部分被认定为不可执行，其余部分仍然完全有效。
+                </p>
+            </div>
+        </section>
+
+        <section class="terms-section" id="s13">
+            <h2><span class="section-num">13</span> 可分割性与全部协议</h2>
+            <p class="section-sub">Severability & Entire Agreement</p>
+            <p>
+                如本协议的任何条款被有管辖权的法院或仲裁机构认定为无效、非法或不可执行，
+                该等无效、非法或不可执行性<strong>不影响本协议其他条款的效力</strong>，
+                且该条款应在尽可能接近原义的范围内被解释为有效、合法并可执行的替代条款。
+            </p>
+            <p>
+                本协议（含《隐私政策》、Apple App Store EULA）构成双方关于本主题事项的完整协议，
+                取代双方此前就本主题达成的一切口头或书面谅解与合同。
+                乙方未行使或延迟行使本协议下的任何权利、权力或特权，均不构成对该权利的放弃；
+                任何对本协议的豁免或修改须以乙方签字盖章的书面文件为准（本页面版本更新除外）。
+            </p>
+        </section>
+
+        <section class="terms-section" id="s14">
+            <h2><span class="section-num">14</span> 联系信息</h2>
+            <p class="section-sub">Contact Information</p>
+            <p>
+                如对本协议的任何条款有疑问、异议或法律函件往来需求，请通过以下渠道联系 EXIOFREEDOM Team 的法务部门：
+            </p>
+            <div class="grid-2">
+                <div class="box">
+                    <div class="box-label">⚖️ 法务联系</div>
+                    <div class="box-text">
+                        legal@exiofreedom.app<br>
+                        工作日 48 小时内回复
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-label">📮 通讯地址</div>
+                    <div class="box-text">
+                        EXIOFREEDOM Team<br>
+                        中国 · 上海市浦东新区 · 陆家嘴
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-label">🛟 客服支持</div>
+                    <div class="box-text">
+                        support@exiofreedom.app<br>
+                        <a href="support.html" style="color: var(--accent-gold);">support.html 帮助中心</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-label">🔒 隐私相关</div>
+                    <div class="box-text">
+                        privacy@exiofreedom.app<br>
+                        DPO / 数据主体权利请求
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px;">
+                <strong style="color: var(--text-primary);">感谢您的耐心阅读。</strong><br>
+                请您放心使用 EXIOFREEDOM。我们将始终秉持「<span style="color: var(--accent-gold);">用户数据主权优先</span>」与「<span style="color: var(--accent-gold);">透明可信</span>」的设计原则，
+                持续打磨这款为财务自由者打造的工具。祝您早日实现财富自主、人生自由。
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-mark">E</div>
+                        <span class="logo-text">EXIOFREEDOM</span>
+                    </div>
+                    <p>为追求财务自由的人打造的高端个人理财追踪应用。以精密数据驱动，助力你实现财富自主、人生自由。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">核心功能</a></li>
+                        <li><a href="index.html#showcase">产品特性</a></li>
+                        <li><a href="index.html#security">安全与隐私</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="support.html">帮助中心</a></li>
+                        <li><a href="support.html#faq">常见问题</a></li>
+                        <li><a href="support.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EXIOFREEDOM. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
